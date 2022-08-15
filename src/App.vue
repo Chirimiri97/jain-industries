@@ -1,19 +1,19 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <navigation-bar></navigation-bar>
+      <div class="px-3">
+        <router-view/>
+      </div>
   </div>
 </template>
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Outfit', sans-serif;
+  // font-family: 'Ubuntu', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  // text-align: center;
   color: #2c3e50;
 }
 
@@ -29,4 +29,27 @@
     }
   }
 }
+
+.cursor-pointer {
+  cursor: pointer;
+}
 </style>
+
+<script>
+import NavigationBar from './components/NavigationBar.vue';
+
+export default{
+  components: {
+    NavigationBar,
+  },
+  data() {
+    return {
+
+    }
+  },
+  mounted() {
+    document.title = "Jain Industries - HomePage";
+  }
+}
+</script>
+
