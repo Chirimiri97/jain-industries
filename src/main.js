@@ -4,6 +4,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import FilterBar from './components/FilterBar.vue' // Filter Bar Component
+import 'vue-search-select/dist/VueSearchSelect.css'
 
 Vue.config.productionTip = false
 

@@ -7,7 +7,10 @@
                         <label for="dealer_name" class="form-label">Dealer Name</label>
                         <input type="text" class="form-control" id="dealer_name" aria-describedby="dealerHelp">
                     </div>
-                    <div class="col-3"></div>
+                    <div class="col-3">
+                        <label for="dealer_name" class="form-label">Select City</label>
+                        <basic-select :options="options" placeholder="Select City" class="form-control"></basic-select>
+                    </div>
                     <div class="col-3"></div>
                     <div class="col-3"></div>
                 </div>
@@ -55,7 +58,8 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Edit Order</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" @click.prevent="closeModal()"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                            @click.prevent="closeModal()"></button>
                     </div>
                     <div class="modal-body">
                         <form>
@@ -118,7 +122,12 @@
 </template>
 
 <script>
+import { BasicSelect } from "vue-search-select";
+
 export default {
+    components: {
+        BasicSelect
+    },
     data() {
         return {
             order_count: 5000,
@@ -155,7 +164,14 @@ export default {
                 product_name: "",
                 order_date: "",
                 payment_status: "",
-            }
+            },
+            options: [
+                { value: '1', text: 'aa' + ' - ' + '1' },
+                { value: '2', text: 'ab' + ' - ' + '2' },
+                { value: '3', text: 'bc' + ' - ' + '3' },
+                { value: '4', text: 'cd' + ' - ' + '4' },
+                { value: '5', text: 'de' + ' - ' + '5' }
+            ],
         }
     },
     methods: {
